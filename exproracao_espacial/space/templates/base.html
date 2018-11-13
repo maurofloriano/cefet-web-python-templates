@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static "estilos.css"%}" />
+</head>
+<body>
+    <header>
+        <h1>
+          <img src="{%static "images/alien-icon.png"%}" id="logo"
+            alt="Ícone com o rosto de um alien">
+          Exploração Espacial
+        </h1>
+        <nav id="menu-principal">
+          <ul>
+            <li><a href="{% url "home"%}">Sobre Aliens</a></li>
+            <li><a href="{% url "philae"%}">Sobre a Philae</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        {% block content %}
+        {% endblock %}
+      </main>
+      <script src="{% static "js/home.js"%}"></script>
+      <script src="{% static "js/navegacao.js"%}"></script>
+      <script src="{% static "js/philae.js"%}"></script>
+</body>
+</html>
